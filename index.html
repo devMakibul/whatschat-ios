@@ -1,0 +1,622 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+    - primary meta tags
+  -->
+  <title>WhatsChat Analyzer</title>
+  <meta name="title" content="WhatsChat Analyzer">
+  <meta content='View and analyze txt file exported from any WhatsApp chat' name='description'/>
+  <meta content='website' property='og:type'/>
+  <meta content='https://makibul.com/whatschat' property='og:url'/>
+  <meta content='WhatsChat Analyzer - View and Analyze WhatsApp Chat' property='og:title'/>
+  <meta content='View and analyze txt file exported from any WhatsApp chat' property='og:description'/>
+  <meta content='https://makibul.com/whatschat/assets/images/meta-banner.jpg' property='og:image'/>
+  <meta content='summary_large_image' property='twitter:card'/>
+  <meta content='@devMakibul' name='twitter:site'/>
+  <meta content='@devMakibul' name='twitter:creator'/>
+  <meta content='https://makibul.com/whatschat' property='twitter:url'/>
+  <meta content='WhatsChat Analyzer - View and Analyze WhatsApp Chat' property='twitter:title'/>
+  <meta content='View and analyze txt file exported from any WhatsApp chat' property='twitter:description'/>
+  <meta content='https://makibul.com/whatschat/assets/images/meta-banner.jpg' property='twitter:image'/>
+  <link href='./assets/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'/>
+  <link href='./assets/images/favicon.ico' rel='shortcut icon' sizes='any' type='image/png'/>
+  <link href='./assets/images/site.webmanifest' rel='manifest'/>
+
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
+    <script src="https://beamanalytics.b-cdn.net/beam.min.js" data-token="c14842ae-4407-4257-837d-42328a45648b" async></script>
+</head>
+
+<body>
+    <header>
+        <h3 class="title">WhatsChat Analyzer</h3>
+        <span class="theme-toggle">Theme</span>
+    </header>
+
+    <div id="introdivs">
+        <div class="intro-desc">
+            <div class="wc-intro">
+                <div class="wc-intro-inner">
+                    <div class="intro-title">WhatsChat Analyzer <span>for WhatsApp iOS <a href="../index.html">Android user?</a></span></div>
+                    <div class="short-desc">Transform those chaotic text files of exported chats into a polished
+                        WhatsApp-like chat experience.</div>
+
+                    <div class="button-list">
+                        <div class="choose-file-1" id="choosefile">
+                            <input type="file" id="file" accept="txt" onchange="readFile(this)">
+                            <label for="file">Select .txt file</label>
+                        </div>
+
+                        <div class="download-txt">
+                          <a href="./assets/wa-chat.txt" download>
+                            <svg style="height: 20px; margin-right: 5px" focusable="false" aria-hidden="true"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zm-1-4-1.41-1.41L13 12.17V4h-2v8.17L8.41 9.59 7 11l5 5 5-5z">
+                                </path>
+                            </svg> example.txt
+                          </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class='intro-thumb'>
+
+                </div>
+            </div>
+        </div>
+        <div class="spikes"></div>
+
+        <div class="feature-head">
+            <h2 class="key-features-title" id="key-features">Key Features</h2>
+            <div class="features">
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-1.svg" alt="Two Message Bubbles icon">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Change Viewer Perspective</h3>
+                        <span>Easily switch between senders to view the chat from different angles.</span>
+                    </div>
+                </div>
+
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-2.svg" alt="Calendar icon">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Navigate by Date</h3>
+                        <span>Jump to specific dates within the chat for quick referencing.</span>
+                    </div>
+                </div>
+
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-3.svg" alt="Wallpaper image icon">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Customize Your Experience</h3>
+                        <span>Personalize the theme and wallpaper to match your preferences. Your choices are saved for
+                            future visits.</span>
+                    </div>
+                </div>
+
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-4.svg" alt="Magnifying glass icon">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Effortless Search</h3>
+                        <span>Find specific messages in a flash whatever you type.</span>
+                    </div>
+                </div>
+
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-5.svg" alt="Up and Down arrow icons">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Swift Navigation</h3>
+                        <span>Quickly jump to the first or last message for efficient browsing.</span>
+                    </div>
+                </div>
+
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-6.svg" alt="Key icon">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Safe, Offline & Server-Free</h3>
+                        <span>Works without the need for an internet connection or external servers, ensuring privacy
+                            and accessibility.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="acccontainer">
+            <h2 id="quick-guide">Quick guide</h2>
+            <div class="accordion">
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Uploading a Chat
+                            Log</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Click on "Select .txt file" to upload your exported WhatsApp chat log.</li>
+                            <li>If you want to try this tool but you don't have a .txt file yet then you can download an
+                                example chat.</li>
+                            <li>Once uploaded, the tool will process the file and display the chat content.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Changing Viewer
+                            Perspective</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Use the "View as" dropdown menu to select the sender whose perspective you want to view
+                                the chat from.</li>
+                            <li>The chat will re-render with messages from the selected sender on the right side.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Navigating to a
+                            Specific Date</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Click on "Go to date" option from the menu to select a date.</li>
+                            <li>Select a date from the dropdown to navigate to messages sent on that specific day.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Searching for
+                            Messages</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>After typing in the search bar, press Enter and the tool will search for matching
+                                messages.</li>
+                            <li>Use the navigation buttons to move between search matches.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Exploring chat
+                            statistics</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Clicking on "Analyze chat" will show you the statistics of the entire chat.</li>
+                            <li>For example: No. of messages sent by each sender, Hours of the day with most no. of
+                                messages sent, etc.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">Changing Theme
+                            and Wallpaper</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Your selected theme is saved in the browser cache and will persist across visits or
+                                reloads.</li>
+                            <li>Similarly, custom wallpapers are saved in the cache, but ensure image sizes aren't too
+                                large.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button id="accordion-button-6" aria-expanded="false"><span class="accordion-title">Quick
+                            Navigation</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Click on the "Go to first message" and "Go to last message" options to quickly navigate
+                                to the beginning or end of the chat.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="footer-child footer-child-1">
+                <div class="footer-child-inner">
+                    <h2 class="footer-title">WhatsChat Analyzer</h2>
+                    WhatsApp exported chat viewer for iOS.
+                    <span class="ios-user"><a href="../index.html">Android user?</a></span>
+                    <ul class="footer-link-1">
+                        <li><a href="#key-features" class="connect-link">Features</a></li>
+                        <li><a href="#quick-guide" class="connect-link">Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-child-inner">
+                    <h4 class="source-code-title">Source Code</h4>
+                    <ul class="source-code-ul">
+                        <li><a href="https://github.com/devMakibul/whatschat" class="connect-link">HTML & CSS (GitHub)</a></li>
+                        <li><a href="https://gumroad.com/makibul/" class="connect-link">HTML, CSS, JS (Soon at Gumroad)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-child footer-child-2">
+                <h4 class="connect">Connect with me</h4>
+                <a href="https://x.com/devMakibul" class="connect-link" target="_blank">X Twitter</a>
+                <a href="https://github.com/devMakibul" class="connect-link" target="_blank">GitHub</a>
+                <h4 class="connect">Contact</h4>
+                <a href="mailto:contactmakibul@gmail.com" class="connect-link" target="_blank">Email</a>
+                <a href="https://t.me/mak1bul" class="connect-link" target="_blank">Telegram</a>
+            </div>
+            <div class="footer-child footer-child-3">
+                <h4 class="support-title">Support</h4>
+                <p class="support-desc">Help me keep this tool alive.</p>
+
+                <ul class="payment-ways">
+                    <li class="payment-link"><a href="https://paypal.me/mak1bul" class="payment-link" target="_blank">Paypal</a></li>
+                    <li class="payment-link" onclick="copyText('181S97FvaU2Sw3LcRWWbZFEsvKiQ8BkHAx', 'BTC address copied')">BTC</li>
+                    <li class="payment-link" onclick="copyText('UQCnKobBnufdchOBxjrpVMEKQRxvI9cEPU5nhjuPPoLjS7Px', 'TON address copied')">TON</li>
+                    <li class="payment-link" onclick="copyText('makibul@upi', 'UPI handle copied')">UPI (India)
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-child footer-child-4">
+                <ul class="bottom-links">
+                    <li class="btm-link"><a href="privacy.html" class="connect-link">Privacy</a></li>
+                    <li class="btm-link"><a href="disclaimer.html" class="connect-link">Disclaimer</a></li>
+                </ul>
+                <div>&copy; 2024 <span><a href="https://makibul.com" target="_blank">Makibul</a></span></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="changing-sender-screen" class="loading-screen">
+        <div style="max-width: 90%;">
+            <span style="display: block">Changing viewer</span> <br>
+
+            <span style="font-size:15px; font-weight: bold; margin-top: 20px; margin-bottom: 20px;">Please
+                wait...</span>
+        </div>
+    </div>
+
+
+    <div id="searching-screen" class="loading-screen" style="z-index: 12">
+        <div style="max-width: 90%;">
+            <span style="display: block">Searching</span> <br>
+
+            <span style="font-size:15px; font-weight: bold; margin-top: 20px; margin-bottom: 20px;">Please
+                wait...</span>
+        </div>
+    </div>
+
+    <div class="wa-bg-outer" ondblclick="showMoreMenu()" id="xxxx" style="display: none">
+        <div class="wa-bg" id="background">
+            <div class="choose-view">
+
+
+
+                <div style="display: none" class="choose-file" id="choosenewfile"
+                    onclick="exitFullscreen(); location.reload()">
+
+                    Choose another file
+                </div>
+
+                <div class="question" id="question" style="display:none;">
+                    <p>View as</p>
+                    <select id="select" onchange="showChangingSenderScreen()"></select>
+                </div>
+
+
+
+            </div>
+            <div class="navbar" id="navbar" style="display: none;">
+                <div class="back-button" onclick="exitFullscreen(); location.reload()"><svg
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-1shn170"
+                        focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ChevronLeftOutlinedIcon"
+                        tabindex="-1" title="ChevronLeftOutlined">
+                        <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z"></path>
+                    </svg></div>
+                <div id="DP">
+                    <div class="dp-inner">
+                        <img
+                            src="https://t4.ftcdn.net/jpg/05/89/93/27/360_F_589932782_vQAEAZhHnq1QCGu5ikwrYaQD0Mmurm0N.jpg">
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%; padding-right: 15px;">
+                    <div class="theSenderName" id="theSenderName">
+                        <h1 style="margin: 0 !important">Loading chat...</h1>
+                    </div>
+
+                    <div class="top-bottom">
+                        <div style="display: flex; gap: 15px">
+                            <li style="list-style: none; display: flex; align-items: center;">
+
+                                <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M 843.003 646.377 L 840.365 343.785 L 634.954 488.841 L 843.003 646.377 Z M 803.099 291.593 C 843.494 263.066 899.797 288.719 904.445 337.769 C 904.617 339.588 904.711 341.414 904.726 343.241 L 907.365 645.833 C 907.77 695.099 854.39 726.326 811.282 702.042 C 808.761 700.622 806.338 699.034 804.032 697.289 L 595.951 539.753 C 561.412 513.598 562.288 461.639 597.689 436.649 L 803.099 291.593 Z"
+                                        transform="matrix(0.9999999999999999, 0, 0, 1, 0, 0)" />
+                                    <path
+                                        d="M144 256a32 32 0 0 0-32 32v417.376a32 32 0 0 0 32 32h456.32a32 32 0 0 0 32-32V288a32 32 0 0 0-32-32H144z m0-64h456.32a96 96 0 0 1 96 96v417.376a96 96 0 0 1-96 96H144a96 96 0 0 1-96-96V288a96 96 0 0 1 96-96z"
+                                        transform="matrix(0.9999999999999999, 0, 0, 1, 0, 0)" />
+                                    <rect x="534.282" y="408.518" width="98.414" height="160.871"
+                                        style="stroke: rgba(0, 0, 0, 0);"
+                                        transform="matrix(0.9999999999999999, 0, 0, 1, 0, 0)" />
+                                </svg>
+                            </li>
+                            <li style="list-style: none; display: flex; align-items: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1">
+                                    <path
+                                        d="M176.128 147.072c-109.205333 124.330667-39.68 364.672 152.277333 556.629333 187.605333 187.605333 416.810667 251.52 554.005334 154.325334a32 32 0 0 0 4.138666-3.477334l26.304-26.325333a96 96 0 0 0-5.76-141.077333l-109.781333-93.205334a96 96 0 0 0-139.136 15.850667l-29.824 40.064a32 32 0 0 1-40.789333 9.088c-46.634667-25.002667-87.722667-55.338667-123.392-91.008a521.258667 521.258667 0 0 1-88.618667-118.954667 32 32 0 0 1 11.242667-42.602666l35.072-21.696a96 96 0 0 0 22.442666-144.064l-99.413333-116.138667a96 96 0 0 0-140.821333-5.461333L177.557333 145.557333l-1.429333 1.493334z m73.194667 17.216a32 32 0 0 1 46.933333 1.813333l99.413333 116.138667a32 32 0 0 1-7.466666 48.021333l-35.072 21.696a96 96 0 0 0-33.706667 127.786667 585.216 585.216 0 0 0 99.477333 133.44c40.149333 40.149333 86.314667 74.218667 138.389334 102.165333a96 96 0 0 0 122.389333-27.285333l29.824-40.042667a32 32 0 0 1 46.378667-5.290666l109.802666 93.226666a32 32 0 0 1 1.92 47.018667l-24.32 24.32c-107.221333 73.408-302.656 18.133333-469.632-148.864-170.688-170.666667-230.293333-375.616-150.08-468.394667L249.322667 164.266667z" />
+                                </svg>
+                            </li>
+
+
+                        </div>
+
+                        <div class="more-menu" id="more-menu">
+                            <ul id="more-menu-options">
+                                <li id="fullscreenButton" onclick="toggleFullscreen()">Fullscreen Mode <svg
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1">
+                                        <path
+                                            d="M400 832H240a47.94 47.94 0 0 1-48-48V624a48 48 0 0 1 96 0v112h112a48 48 0 0 1 0 96z m0-544H288v112a48 48 0 0 1-96 0V240a47.94 47.94 0 0 1 48-48h160a48 48 0 0 1 0 96z m432 496a47.94 47.94 0 0 1-48 48H624a48 48 0 0 1 0-96h112V624a48 48 0 0 1 96 0z m0-384a48 48 0 0 1-96 0V288H624a48 48 0 0 1 0-96h160a47.94 47.94 0 0 1 48 48z" />
+                                    </svg></li>
+
+                                <li class="find-button"
+                                    onclick="showFindBoxXyz(); hideMoreMenu(); hidenavbar(); hideDate(); hideBottomBar()">
+                                    Search <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon"
+                                        viewBox="0 0 1024 1024" version="1.1">
+                                        <path
+                                            d="M887 840.4L673.4 624.8c41.8-52.4 67-118.8 67-191 0-169-137-306-306.2-306S128 265 128 434s137 306 306.2 306c73.2 0 140.2-25.6 193-68.4l212.2 214.2c6.4 6.8 15.2 10.2 23.8 10.2 8.2 0 16.4-3 22.6-9 13.2-12.6 13.6-33.4 1.2-46.6z m-452.8-166.2c-64.2 0-124.6-25-170-70.4-45.4-45.4-70.4-105.8-70.4-169.8 0-64.2 25-124.6 70.4-169.8 45.4-45.4 105.8-70.4 170-70.4s124.6 25 170 70.4c45.4 45.4 70.4 105.8 70.4 169.8 0 64.2-25 124.6-70.4 169.8-45.4 45.4-105.8 70.4-170 70.4z" />
+                                    </svg>
+                                </li>
+
+                                <li onclick="showDateDropdown()">Go to date <svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 1024 1024" version="1.1">
+                                        <path
+                                            d="M848 192h-80v48c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16V192H320v48c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16V192H176c-44 0-80 36-80 80v544c0 44 36 80 80 80h672c44 0 80-36 80-80V272c0-44-36-80-80-80z m16 600c0 22-18 40-40 40H200c-22 0-40-18-40-40V432c0-8.8 7.2-16 16-16h672c8.8 0 16 7.2 16 16v360zM320 144c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48h64V144z m448 0c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48h64V144z" />
+                                    </svg></li>
+
+                                <li onclick="showStats(); hideDate()">
+                                    View stats <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 1024"
+                                        version="1.1">
+                                        <path
+                                            d="M315.076923 620.228923v-146.510769c0.157538-24.418462 8.507077-35.603692 26.702769-35.682462 13.154462 0 26.387692-0.157538 39.542154 0 15.911385 0.236308 24.891077 12.130462 24.891077 33.555693 0.157538 59.076923 0.078769 178.333538 0 237.410461 0 21.819077-9.137231 33.870769-25.363692 34.028308-13.627077 0.078769-27.254154 0.157538-40.881231 0-15.517538-0.157538-24.654769-12.051692-24.812308-32.846769-0.157538-29.932308 0-59.943385 0-89.954462zM627.948308 585.097846V303.655385c0-24.654769 8.664615-36.233846 27.017846-36.233847 13.233231-0.078769 26.466462-0.157538 39.620923 0 15.517538 0.236308 24.891077 12.051692 24.969846 32.84677 0.157538 90.348308 0.157538 330.515692 0 420.942769 0 21.031385-9.609846 33.161846-25.363692 33.319385-12.760615 0.157538-25.521231 0-38.281846 0-19.219692 0-27.963077-11.500308-27.963077-37.021539V585.176615zM1032.428308 538.624v192.196923c0 26.702769-8.113231 37.572923-27.963077 37.572923h-38.203077c-15.517538-0.236308-24.891077-12.288-24.891077-32.846769-0.157538-131.387077-0.157538-474.663385 0-606.129231 0-20.322462 8.900923-32.137846 24.418461-32.531692 13.784615-0.315077 27.569231-0.236308 41.432616 0 16.541538 0.236308 25.127385 11.815385 25.206154 34.028308v407.709538z" />
+                                        <path
+                                            d="M118.153846 907.736615V78.769231a39.384615 39.384615 0 0 0-78.769231 0v907.736615h1177.442462a39.384615 39.384615 0 1 0 0-78.769231H118.153846z" />
+                                    </svg>
+                                </li>
+
+                                <li onclick="goToFirstMessage(); hideDate()">
+                                    Go to first message <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"
+                                        version="1.1">
+                                        <path
+                                            d="M696.6 432.8c-10 10.2-26.6 10.2-36.8 0.2L538 311.6v462.6c0 14.2-11.6 25.8-26 25.8s-26-11.6-26-25.8V311.6l-121.8 121.6c-10.2 10-26.6 9.8-36.8-0.2-10-10.2-10-26.4 0.2-36.6l166-164.8c2.4-2.2 5-4 8.2-5.4 3.2-1.4 6.6-2 10-2 6.8 0 13.2 2.6 18.2 7.4l166 164.8c10.4 9.8 10.6 26.2 0.6 36.4z" />
+                                    </svg>
+                                </li>
+
+                                <li onclick="goToLastMessage(); hideDate()">
+                                    Go to last message <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"
+                                        version="1.1">
+                                        <path
+                                            d="M696.6 591.2c-10-10.2-26.6-10.2-36.8-0.2L538 712.4V249.8c0-14.2-11.6-25.8-26-25.8s-26 11.6-26 25.8v462.6l-121.8-121.6c-10.2-10-26.6-9.8-36.8 0.2-10 10.2-10 26.4 0.2 36.6l166 164.8c2.4 2.2 5 4 8.2 5.4 3.2 1.4 6.6 2 10 2 6.8 0 13.2-2.6 18.2-7.4l166-164.8c10.4-9.8 10.6-26.2 0.6-36.4z" />
+                                    </svg>
+                                </li>
+
+                                <li onclick="changeImage(); hideDate()">Change wallpaper <svg
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1">
+                                        <path
+                                            d="M170.666667 213.333333c0-23.466667 19.2-42.666667 42.666666-42.666666h213.333334c23.466667 0 42.666667-19.2 42.666666-42.666667s-19.2-42.666667-42.666666-42.666667H170.666667c-46.933333 0-85.333333 38.4-85.333334 85.333334v256c0 23.466667 19.2 42.666667 42.666667 42.666666s42.666667-19.2 42.666667-42.666666V213.333333z m239.36 362.24l-126.293334 157.866667c-11.093333 14.08-1.28 34.56 16.64 34.56H725.333333a21.333333 21.333333 0 0 0 17.066667-34.133333l-85.333333-113.92c-8.533333-11.52-25.6-11.52-34.133334 0l-69.546666 93.013333-110.08-137.386667a21.333333 21.333333 0 0 0-33.28 0zM725.333333 362.666667c0-35.413333-28.586667-64-64-64S597.333333 327.253333 597.333333 362.666667s28.586667 64 64 64S725.333333 398.08 725.333333 362.666667zM853.333333 85.333333h-256c-23.466667 0-42.666667 19.2-42.666666 42.666667s19.2 42.666667 42.666666 42.666667h213.333334c23.466667 0 42.666667 19.2 42.666666 42.666666v213.333334c0 23.466667 19.2 42.666667 42.666667 42.666666s42.666667-19.2 42.666667-42.666666V170.666667c0-46.933333-38.4-85.333333-85.333334-85.333334z m0 725.333334c0 23.466667-19.2 42.666667-42.666666 42.666666h-213.333334c-23.466667 0-42.666667 19.2-42.666666 42.666667s19.2 42.666667 42.666666 42.666667h256c46.933333 0 85.333333-38.4 85.333334-85.333334v-256c0-23.466667-19.2-42.666667-42.666667-42.666666s-42.666667 19.2-42.666667 42.666666v213.333334zM128 554.666667c-23.466667 0-42.666667 19.2-42.666667 42.666666v256c0 46.933333 38.4 85.333333 85.333334 85.333334h256c23.466667 0 42.666667-19.2 42.666666-42.666667s-19.2-42.666667-42.666666-42.666667H213.333333c-23.466667 0-42.666667-19.2-42.666666-42.666666v-213.333334c0-23.466667-19.2-42.666667-42.666667-42.666666z" />
+                                    </svg></li>
+                                <li style="display: none;" onclick="deleteImage(); hideDate()" class="delete-button">
+                                    Remove wallpaper <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"
+                                        version="1.1">
+                                        <path
+                                            d="M173.942611 173.061544l677.733649 0 0 35.670407L173.942611 208.731952 173.942611 173.061544zM691.160449 957.805392 334.458421 957.805392c-19.318998 0-35.670407-6.315846-49.043996-18.957771-13.383822-12.58462-20.812001-29.306466-22.295795-50.157353l-53.505611-695.568852 35.670407-4.461615 53.505611 695.568852c2.967588 25.311479 14.857383 37.905308 35.670407 37.905308l356.702028 0c20.802792 0 32.692586-12.593829 35.670407-37.905308l53.504588-695.568852 35.670407 4.461615-53.504588 695.568852c-1.483794 19.318998-9.293667 35.670407-23.409153 49.043996C724.975603 951.108876 708.995653 957.805392 691.160449 957.805392zM673.325245 190.896748l-35.670407 0 0-53.505611c0-23.741727-11.889795-35.670407-35.670407-35.670407L423.63444 101.720729c-23.780613 0-35.670407 11.927657-35.670407 35.670407l0 53.505611-35.670407 0 0-53.505611c0-20.812001 6.687306-37.905308 20.060895-51.27992 13.383822-13.373589 30.466895-20.060895 51.27992-20.060895l178.351014 0c20.802792 0 37.896098 6.687306 51.27992 20.060895 13.373589 13.373589 20.060895 30.466895 20.060895 51.27992L673.326269 190.896748zM405.799236 280.071743l17.835204 570.72345-35.670407 0L370.128829 280.071743 405.799236 280.071743zM494.974231 280.071743l35.670407 0 0 570.72345-35.670407 0L494.974231 280.071743zM619.820658 280.071743l35.670407 0-17.835204 570.72345-35.670407 0L619.820658 280.071743z" />
+                                    </svg></li>
+
+                                <li id="show-bottom-bar" onclick="showBottomBar()">Show bottom bar <svg
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1">
+                                        <path
+                                            d="M673.259757 943.99885c-66.688992 0-120.944853-53.828523-120.944854-120.001484V668.002694h80.629903c22.261916 0 40.314951-17.907901 40.314951-40.000494s-18.053035-40.000494-40.314951-40.000494H552.314903V200.002553c0-66.172961 54.255861-120.001483 120.944854-120.001483 22.261916 0 40.314951-17.907901 40.314951-40.000495S695.521673 0.000081 673.259757 0.000081a201.921464 201.921464 0 0 0-161.259805 80.129996A201.921464 201.921464 0 0 0 350.740148 0.000081C328.478232 0.000081 310.425197 17.907982 310.425197 39.992512 310.425197 62.085105 328.478232 80.009133 350.740148 80.009133c66.688992 0 120.944853 53.828523 120.944853 120.001483v387.99109H391.055099c-22.261916 0-40.314951 17.915964-40.314951 40.008557 0 22.092593 18.053035 39.992431 40.314951 39.992431h80.629902v156.002735c0 66.172961-54.255861 120.001483-120.944853 120.001484-22.261916 0-40.314951 17.907901-40.314951 40.000494S328.478232 1023.999839 350.740148 1023.999839a201.921464 201.921464 0 0 0 161.259804-80.129997A201.921464 201.921464 0 0 0 673.259757 1023.999839c22.261916 0 40.314951-17.907901 40.314951-39.992432 0-22.092593-18.053035-40.008557-40.314951-40.008557z" />
+                                    </svg></li>
+                                <li style="display: none" id="hide-bottom-bar" onclick="hideBottomBar()">Hide bottom bar
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1">
+                                        <path
+                                            d="M176.6 136.2c-11.2-11-29.2-11-40.2 0.2-11 11-11 29 0 40l711 711.4c7.4 7.4 18 9.8 27.4 7.2 4.8-1.2 9.2-3.8 12.8-7.4 11-11 11-29 0-40L176.6 136.2z m343.8 555.6c-106 4.8-193.2-82.4-188.2-188.2 1.2-24.4 7.2-47.6 17.2-68.6L242.6 328c-55.4 42.8-110.8 97.8-170.2 162.6-11 12.2-11.2 30.4-0.2 42.6C202 676.6 316.4 800 511.6 800c59.4 0 114.2-14.8 164.6-38.4l-87-87c-21.2 10-44.4 16-68.8 17.2zM951.6 532c10.6-11.6 11.2-29.2 1-41.4C848 363.6 703 224 511.6 224c-58.2 0-112 13.2-164 38l87.4 87.4c21-10 44.2-16.2 68.6-17.2 106-4.8 193.2 82.4 188.2 188.2-1.2 24.4-7.2 47.6-17.2 68.6l107 107c66-50.6 122.6-111.8 170-164z" />
+                                        <path
+                                            d="M384.4 521.8c4.8 62.6 55.2 113 117.8 117.8 16.4 1.2 32.2-0.6 46.8-5.2l-159.6-159.6c-4.4 14.8-6.2 30.6-5 47zM640 512c0-2.6-0.2-5.2-0.2-7.8-11.2 5-23.4 7.8-36.4 7.8-2.2 0-4.2 0-6.2-0.2l37.2 37.4c3.6-11.8 5.6-24.4 5.6-37.2z m-128-94c0-12 2.2-23.4 6.2-33.8-2 0-4-0.2-6.2-0.2-12.8 0-25.2 2-37 5.6l37.4 37.4c-0.2-3-0.4-6-0.4-9z" />
+                                    </svg>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div id="dateDropdownWrapper">
+
+                            <div id="dateDropdown" class="more-menu-2">
+                                <div id="dateNav">
+                                    <h3>Go to date</h3>
+                                    <button class="close-button" onclick="hideDate()"><svg focusable="false"
+                                            aria-hidden="true" viewBox="0 0 24 24">
+                                            <path
+                                                d="M18.3 5.71a.9959.9959 0 0 0-1.41 0L12 10.59 7.11 5.7a.9959.9959 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z">
+                                            </path>
+                                        </svg></button>
+                                </div>
+                                <ul></ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="find-box">
+                <div class="find-box-inner">
+                    <div style="display: flex;">
+                        <div style="display: flex; align-items: center; padding: 0 5px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 1024 1024" version="1.1" style="height: 20px; width: 20px; fill: white;">
+                                <path
+                                    d="M887 840.4L673.4 624.8c41.8-52.4 67-118.8 67-191 0-169-137-306-306.2-306S128 265 128 434s137 306 306.2 306c73.2 0 140.2-25.6 193-68.4l212.2 214.2c6.4 6.8 15.2 10.2 23.8 10.2 8.2 0 16.4-3 22.6-9 13.2-12.6 13.6-33.4 1.2-46.6z m-452.8-166.2c-64.2 0-124.6-25-170-70.4-45.4-45.4-70.4-105.8-70.4-169.8 0-64.2 25-124.6 70.4-169.8 45.4-45.4 105.8-70.4 170-70.4s124.6 25 170 70.4c45.4 45.4 70.4 105.8 70.4 169.8 0 64.2-25 124.6-70.4 169.8-45.4 45.4-105.8 70.4-170 70.4z">
+                                </path>
+                            </svg></div>
+                        <input id="searchInput" class="find-input" placeholder="Search..."
+                            onkeypress="if(event.keyCode === 13) searchText(); showSearchNavigation(); checkInputAndHideDiv()">
+                    </div>
+
+
+                    <div id="search-navigation-buttons" style="display: none; gap: 2px;">
+
+                        <button class="find-icon prev-icon" id="prevMatch" onclick="prevMatch()" disabled=""><svg
+                                focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"></path>
+                            </svg></button>
+
+                        <button class="find-icon next-icon" id="nextMatch" onclick="nextMatch()" disabled=""><svg
+                                focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+                            </svg></button>
+                    </div>
+                </div>
+                <button class="find-icon close-icon" onclick="closeFindBoxEfg(); shownavbar();"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M18.3 5.71a.9959.9959 0 0 0-1.41 0L12 10.59 7.11 5.7a.9959.9959 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z">
+                    </path>
+                </svg></button>
+            </div>
+
+            <div id="firstMes"></div>
+
+            <div id="content" onclick="hideMoreMenu();">
+            </div>
+
+
+
+            <div class="write-msg-bar" id="write-msg-bar" style="display: none">
+                <div class="write-inner">
+                    <div class="msg-icons plus-icon"><svg xmlns="http://www.w3.org/2000/svg" width="800px"
+                            height="800px" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg></div>
+                    <div class="camera-emoji-msg">
+
+                        <div class="plus-input">
+
+                            <input type="text" class="type-message" placeholder="Message" name="search">
+                        </div>
+
+                        <div class="emoji-camera">
+
+                            <div class="msg-icons docs-icon">
+
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 10V15C22 20 20 22 15 22H9C4 22 2 20 2 15V9C2 4 4 2 9 2H14"
+                                        stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        transform="matrix(0.9999999999999999, 0, 0, 1, -4.440892098500626e-16, 0)" />
+                                    <path
+                                        d="M 21.734 10.158 L 17.734 10.158 C 14.734 10.158 13.734 9.158 13.734 6.158 L 13.734 2.158 C 16.439 0.842 23.342 9.376 21.734 10.158 Z"
+                                        stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        transform="matrix(0.9999999999999999, 0, 0, 1, -4.440892098500626e-16, 0)" />
+                                </svg>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="msg-icons camera-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 192 192"
+                            fill="none">
+                            <path fill="#000000"
+                                d="M60 50v6a6 6 0 0 0 4.8-2.4L60 50Zm12-16v-6a6 6 0 0 0-4.8 2.4L72 34Zm60 16-4.8 3.6A6 6 0 0 0 132 56v-6Zm-12-16 4.8-3.6A6 6 0 0 0 120 28v6Zm44 32v76h12V66h-12Zm-10 86H38v12h116v-12ZM28 142V66H16v76h12Zm10-86h22V44H38v12Zm26.8-2.4 12-16-9.6-7.2-12 16 9.6 7.2ZM132 56h22V44h-22v12Zm4.8-9.6-12-16-9.6 7.2 12 16 9.6-7.2ZM120 28H72v12h48V28ZM38 152c-5.523 0-10-4.477-10-10H16c0 12.15 9.85 22 22 22v-12Zm126-10c0 5.523-4.477 10-10 10v12c12.15 0 22-9.85 22-22h-12Zm12-76c0-12.15-9.85-22-22-22v12c5.523 0 10 4.477 10 10h12ZM28 66c0-5.523 4.477-10 10-10V44c-12.15 0-22 9.85-22 22h12Z" />
+                            <circle cx="96" cy="102" r="28" stroke="#000000" stroke-width="12" />
+                        </svg>
+                    </div>
+
+                    <div class="msg-icons mic-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 48 48"
+                            version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g class="mic-g" fill-rule="nonzero">
+                                    <path
+                                        d="M34.5,23.75 C35.1903559,23.75 35.75,24.3096441 35.75,25 C35.75,30.7904522 31.3753005,35.5591386 25.7506989,36.1812617 L25.75,38.75 C25.75,39.4403559 25.1903559,40 24.5,40 C23.8527913,40 23.3204661,39.5081253 23.2564536,38.8778052 L23.25,38.75 L23.2503043,36.1813727 C17.6252197,35.5597057 13.25,30.7907965 13.25,25 C13.25,24.3096441 13.8096441,23.75 14.5,23.75 C15.1903559,23.75 15.75,24.3096441 15.75,25 C15.75,29.8324916 19.6675084,33.75 24.5,33.75 C29.3324916,33.75 33.25,29.8324916 33.25,25 C33.25,24.3096441 33.8096441,23.75 34.5,23.75 Z M24.5,8 C27.5375661,8 30,10.4624339 30,13.5 L30,24.5 C30,27.5375661 27.5375661,30 24.5,30 C21.4624339,30 19,27.5375661 19,24.5 L19,13.5 C19,10.4624339 21.4624339,8 24.5,8 Z M24.5,10.5 C22.8431458,10.5 21.5,11.8431458 21.5,13.5 L21.5,24.5 C21.5,26.1568542 22.8431458,27.5 24.5,27.5 C26.1568542,27.5 27.5,26.1568542 27.5,24.5 L27.5,13.5 C27.5,11.8431458 26.1568542,10.5 24.5,10.5 Z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg></div>
+                </div>
+            </div>
+
+
+
+            <div class="bottom-bar">
+                <div id="pageInfo"></div>
+                <div class="next-prev-page-buttons">
+
+                    <button id="previousButton" onclick="displayPreviousBatch()" style="display: none"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-1shn170"
+                            focusable="false" aria-hidden="true" viewBox="0 0 24 24"
+                            data-testid="ChevronLeftOutlinedIcon" tabindex="-1" title="ChevronLeftOutlined">
+                            <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z"></path>
+                        </svg></button>
+
+                    <button id="nextButton" onclick="displayNextBatch()"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-1shn170"
+                            focusable="false" aria-hidden="true" viewBox="0 0 24 24"
+                            data-testid="ChevronRightOutlinedIcon" tabindex="-1" title="ChevronRightOutlined">
+                            <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"></path>
+                        </svg></button>
+
+                </div>
+            </div>
+
+
+            <div class="custom-popup" id="customPopup">Not found</div>
+            <div id="lastMes"></div>
+
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
